@@ -1,0 +1,39 @@
+{
+  "name": "simple-reddit",
+  "version": "0.0.1",
+  "description": "A very simple Reddit API wrapper. 'inspired' by sahilm/reddit.js",
+  "main": "index.js",
+  "module": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "standard src/",
+    "test": "mocha --compilers js:babel-core/register",
+    "test:watch": "mocha --compilers js:babel-core/register --watch",
+    "watch": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fa7ad/simple-reddit"
+  },
+  "keywords": [],
+  "homepage": "https://github.com/fa7ad/simple-reddit",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-external-helpers": "^6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "chai": "^4.0.2",
+    "core-js": "^2.4.1",
+    "mocha": "^3.1.2",
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^4.0.0",
+    "standard": "^10.0.2"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  }
+}
