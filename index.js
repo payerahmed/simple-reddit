@@ -4,16 +4,15 @@
 	(global.simpleReddit = factory());
 }(this, (function () { 'use strict';
 
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
+var simpleReddit = {
+  hot: function hot(subreddit) {
+    return this.listing({
+      subreddit: subreddit,
+      resource: 'hot'
+    });
   }
 };
 
-var SimpleReddit = function SimpleReddit() {
-  classCallCheck(this, SimpleReddit);
-};
-
-return SimpleReddit;
+return simpleReddit;
 
 })));

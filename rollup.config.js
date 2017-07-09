@@ -17,7 +17,7 @@ export default {
     babel({
       babelrc: false,
       exclude: 'node_modules/**',
-      presets: [['es2015', { modules: false }]],
+      presets: ['stage-1', ['es2015', { modules: false }]],
       plugins: ['external-helpers']
     })
   ]
