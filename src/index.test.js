@@ -1,9 +1,12 @@
 import { describe } from 'ava-spec'
-import simpleReddit from './index'
+import SimpleReddit from './index'
 
-describe('Simple Reddit', it => {
-  it('exports an object', t => {
-    t.is(typeof simpleReddit, 'object')
+describe('Simple-reddit', it => {
+  it('exports a class(function)', t => {
+    t.is(typeof SimpleReddit, 'function')
   })
-  it.todo('something else')
+  it('exports .hot method', t => {
+    const red = new SimpleReddit()
+    t.is(typeof red.hot, 'function')
+  })
 })

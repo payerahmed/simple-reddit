@@ -1,11 +1,12 @@
 import babel from 'rollup-plugin-babel'
+import uglify from 'rollup-plugin-uglify'
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 
 export default {
   entry: 'src/index.js',
   format: 'umd',
-  moduleName: 'simpleReddit',
+  moduleName: 'SimpleReddit',
   dest: 'index.js',
   plugins: [
     resolve({
@@ -17,8 +18,22 @@ export default {
     babel({
       babelrc: false,
       exclude: 'node_modules/**',
-      presets: ['stage-1', ['es2015', { modules: false }]],
-      plugins: ['external-helpers']
+      presets: [
+        [
+          'env',
+          {
+            targets: {
+              browsers: ['>= 5%', 'last 2 versions']
+            },
+            modules: false,
+            useBuiltIns: true
+          }
+        ]
+      ],
+      plugins: ['external-helpers', 'transform-class-properties']
+    }),
+    uglify({
+      mangle: false
     })
   ]
 }
